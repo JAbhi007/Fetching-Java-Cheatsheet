@@ -31,8 +31,9 @@
                                     <build>
                                         <from>java</from>
                                         <assembly>
-                                            <descriptor>assembly.xml</descriptor>
+                                            <descriptorRef>artifact</descriptorRef>
                                         </assembly>
+                                        <cmd>java -cp maven/helloworld-1.0-SNAPSHOT.jar org.examples.java.App</cmd>
                                     </build>
                                 </image>
                             </images>
