@@ -5,7 +5,7 @@
     <dependencySets>
         <dependencySet>
             <includes>
-                <include>org.examples.java:hello-java</include>
+                <include>org.examples.java:helloworld</include>
             </includes>
             <outputDirectory>.</outputDirectory>
             <outputFileNameMapping>helloworld-1.0-SNAPSHOT.jar</outputFileNameMapping>
