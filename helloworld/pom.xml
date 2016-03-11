@@ -35,6 +35,11 @@
                                         </assembly>
                                         <cmd>java -cp maven/helloworld-1.0-SNAPSHOT.jar org.examples.java.App</cmd>
                                     </build>
+                                    <run>
+                                        <wait>
+                                            <log>Hello</log>
+                                        </wait>
+                                    </run>
                                 </image>
                             </images>
                         </configuration>
