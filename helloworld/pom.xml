@@ -56,6 +56,7 @@
                                 <phase>install</phase>
                                 <goals>
                                     <goal>start</goal>
+                                    <goal>logs</goal>
                                 </goals>
                             </execution>
                         </executions>
