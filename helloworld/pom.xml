@@ -37,7 +37,7 @@
                                     </build>
                                     <run>
                                         <wait>
-                                            <log>Hello</log>
+                                            <log>Hello World!</log>
                                         </wait>
                                     </run>
                                 </image>
