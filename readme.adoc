@@ -2,3 +2,6 @@
 
 This repository contain samples that shows integration of Docker and Java.
 
+. Build app: `mvn package -Pdocker`
+. Run app: `mvn install -Pdocker`
+
