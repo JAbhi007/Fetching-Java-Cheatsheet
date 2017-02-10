@@ -1,0 +1,25 @@
+group = 'org.examples.java'
+version = '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin:'application'
+
+mainClassName = "org.examples.java.App"
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.examples.java.App'
+    }
+}
+
