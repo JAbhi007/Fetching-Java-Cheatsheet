@@ -26,6 +26,26 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <mainClass>org.examples.java.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.examples.java.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -40,13 +60,13 @@
                         <configuration>
                             <images>
                                 <image>
-                                    <name>hello-java</name>
+                                    <name>hellojava</name>
                                     <build>
                                         <from>openjdk:latest</from>
                                         <assembly>
                                             <descriptorRef>artifact</descriptorRef>
                                         </assembly>
-                                        <cmd>java -cp maven/${project.name}-${project.version}.jar org.examples.java.App</cmd>
+                                        <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
                                     </build>
                                     <run>
                                         <wait>
