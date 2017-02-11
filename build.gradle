@@ -12,6 +12,9 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'com.bmuschko.docker-java-application'
 
+import com.bmuschko.gradle.docker.tasks.container.*
+import com.bmuschko.gradle.docker.tasks.image.*
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -29,4 +32,14 @@ docker {
         baseImage = 'openjdk:latest'
         tag = 'hellojava'
     }
+}
+
+task createContainer(type: DockerCreateContainer) {
+    dependsOn dockerBuildImage
+    targetImageId { dockerBuildImage.getImageId() }
+}
+
+task startContainer(type: DockerStartContainer) {
+    dependsOn createContainer
+    targetContainerId { createContainer.getContainerId() }
 }
