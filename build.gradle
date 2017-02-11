@@ -3,11 +3,21 @@ version = '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin:'application'
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+import com.bmuschko.gradle.docker.tasks.container.*
+import com.bmuschko.gradle.docker.tasks.image.*
 
 mainClassName = "org.examples.java.App"
 
-repositories {
-    mavenCentral()
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:3.0.5'
+    }
 }
 
 sourceCompatibility = 1.8
@@ -21,5 +31,24 @@ jar {
     manifest {
         attributes 'Main-Class': 'org.examples.java.App'
     }
+}
+
+task createDockerfile(type: Dockerfile) {
+    destFile = project.file('build/Dockerfile')
+    from 'openjdk'   
+}
+
+task copyDockerArtifacts(type: Copy) {
+    dependsOn build
+
+    from('build/libs') {
+        include "docker-java-sample-${project.version}.war"
+    }
+}
+
+task buildImage(type: DockerBuildImage) {
+    dependsOn copyDockerArtifacts
+    inputDir = project.file('build/docker')
+    tag = 'hellojava'
 }
 

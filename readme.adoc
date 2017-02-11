@@ -11,8 +11,8 @@ This repository contain samples that shows integration of Docker and Java.
 
 === With Docker
 
-. Build app: `mvn package -Pdocker`
-. Run app: `mvn install -Pdocker`
+. Build image: `mvn package -Pdocker`
+. Run container: `mvn install -Pdocker`
 
 == Gradle
 
@@ -23,5 +23,6 @@ This repository contain samples that shows integration of Docker and Java.
 
 === With Docker
 
-Work in progress
+. Build image: `./gradlew buildImage`
+. Run container: `./gradlew runContainer`
 
