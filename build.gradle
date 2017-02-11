@@ -1,25 +1,32 @@
-group = 'org.examples.java'
-version = '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:3.0.5'
+    }
+}
 
 apply plugin: 'java'
-apply plugin:'application'
-
-mainClassName = "org.examples.java.App"
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'application'
+apply plugin: 'com.bmuschko.docker-java-application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+group = 'org.examples.java'
+version = '1.0-SNAPSHOT'
+
+mainClassName = "org.examples.java.App"
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'org.examples.java.App'
+docker {
+    javaApplication {
+        baseImage = 'openjdk:latest'
+        tag = 'hellojava'
     }
 }
-
