@@ -111,9 +111,10 @@
                     <plugin>
                         <groupId>dcos</groupId>
                         <artifactId>dcos-maven-plugin</artifactId>
-                        <version>0.1</version>
+                        <version>0.2</version>
                         <configuration>
-                            <dcosUrl>http://DCOS-ElasticLoadBa-WG3MA5FTD2NX-768823087.us-west-1.elb.amazonaws.com/</dcosUrl>
+                            <dcosUrl>http://DCOS-ElasticLoadBa-MRVM18Z02HUL-2060784478.us-west-1.elb.amazonaws.com/</dcosUrl>
+                            <deployable>group</deployable>
                             <ignoreSslCertificate>true</ignoreSslCertificate>
                         </configuration>
                         <executions>
