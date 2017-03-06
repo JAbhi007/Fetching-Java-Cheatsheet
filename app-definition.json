@@ -21,7 +21,7 @@
                   "name":"admin",
                   "servicePort":8091,
                   "labels":{  
-                    "VIP_0":"/database:8091"
+                    "VIP_0":"/db:8091"
                   }
                 },
                 {  
@@ -30,7 +30,7 @@
                   "name":"xdcr",
                   "servicePort":8092,
                   "labels":{  
-                    "VIP_0":"/database:8092"
+                    "VIP_0":"/db:8092"
                   }
                 },
                 {  
@@ -39,7 +39,7 @@
                   "name":"query",
                   "servicePort":8093,
                   "labels":{  
-                    "VIP_0":"/database:8093"
+                    "VIP_0":"/db:8093"
                   }
                 },
                 {  
@@ -48,7 +48,7 @@
                   "name":"memcached",
                   "servicePort":11210,
                   "labels":{  
-                    "VIP_0":"/database:11210"
+                    "VIP_0":"/db:11210"
                   }
                 }
               ]
@@ -94,7 +94,7 @@
             "networkName":"dcos"
           },
           "env":{  
-            "COUCHBASE_URI":"webappdb-groupdb.marathon.l4lb.thisdcos.directory"
+            "COUCHBASE_URI":"webapp.db-group.db.marathon.l4lb.thisdcos.directory"
           }
         }
       ]
