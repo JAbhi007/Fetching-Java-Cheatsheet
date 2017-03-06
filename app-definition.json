@@ -46,7 +46,7 @@
             "COUCHBASE_URI":"database-webapp.marathon.containerip.dcos.thisdcos.directory"
          },
          "labels":{  
-            "HAPROXY_0_VHOST":"DCOS-PublicSlaveLo-12LOS82TA7BGH-719211721.us-west-1.elb.amazonaws.com",
+            "HAPROXY_0_VHOST":"DCOS-PublicSlaveLo-LZ6PIP10I08O-1004309391.us-west-1.elb.amazonaws.com",
             "HAPROXY_GROUP":"external"
          }
       }
