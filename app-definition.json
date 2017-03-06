@@ -66,7 +66,7 @@
     },
     {  
       "id":"web-group",
-      "dependencies": ["db"],
+      "dependencies": ["db-group"],
       "apps":[  
         {  
           "id":"web",
@@ -76,7 +76,7 @@
           "container":{  
             "type":"DOCKER",
             "docker":{  
-              "image":"arungupta/couchbase-wildfly-javaee:travel",
+              "image":"arungupta/wildfly-couchbase-javaee:travel",
               "network":"USER",
               "portMappings":[  
                 {  
@@ -94,7 +94,7 @@
             "networkName":"dcos"
           },
           "env":{  
-            "COUCHBASE_URI":"database.marathon.l4lb.thisdcos.directory"
+            "COUCHBASE_URI":"db.marathon.l4lb.thisdcos.directory"
           }
         }
       ]
