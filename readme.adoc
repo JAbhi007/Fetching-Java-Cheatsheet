@@ -14,6 +14,10 @@ This repository contain samples that shows integration of Docker and Java.
 . Build image: `mvn package -Pdocker`
 . Run container: `mvn install -Pdocker`
 
+=== With DC/OS
+
+. Run application: `mvn install -Pdcos`
+
 == Gradle
 
 === Classical
