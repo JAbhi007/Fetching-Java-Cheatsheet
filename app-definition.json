@@ -13,7 +13,7 @@
             "type":"DOCKER",
             "docker":{  
               "image":"arungupta/couchbase:travel",
-              "network":"USER",
+              "network":"BRIDGE",
               "portMappings":[  
                 {  
                   "containerPort":8091,
@@ -54,9 +54,6 @@
               ]
             }
           },
-          "ipAddress":{  
-            "networkName":"dcos"
-          },
           "labels":{  
             "HAPROXY_0_VHOST":"DCOS-PublicSlaveLo-12LOS82TA7BGH-719211721.us-west-1.elb.amazonaws.com",
             "HAPROXY_GROUP":"external"
@@ -77,10 +74,10 @@
             "type":"DOCKER",
             "docker":{  
               "image":"arungupta/wildfly-couchbase-javaee:travel",
-              "network":"USER",
+              "network":"BRIDGE",
               "portMappings":[  
                 {  
-                  "hostPort":0,
+                  "hostPort":8080,
                   "containerPort":8080,
                   "protocol":"tcp",
                   "labels":{  
@@ -90,11 +87,12 @@
               ]
             }
           },
-          "ipAddress":{  
-            "networkName":"dcos"
+          "labels": {
+            "HAPROXY_0_VHOST":"DCOS-PublicSlaveLo-12LOS82TA7BGH-719211721.us-west-1.elb.amazonaws.com",
+            "HAPROXY_GROUP":"external"
           },
-          "env":{  
-            "COUCHBASE_URI":"webapp.db-group.db.marathon.l4lb.thisdcos.directory"
+          "env": {
+            "COUCHBASE_URI":"webappdb-groupdb.marathon.l4lb.thisdcos.directory:8093"
           }
         }
       ]
