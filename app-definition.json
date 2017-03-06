@@ -94,7 +94,7 @@
             "networkName":"dcos"
           },
           "env":{  
-            "COUCHBASE_URI":"db.marathon.l4lb.thisdcos.directory"
+            "COUCHBASE_URI":"webappdb-groupdb.marathon.l4lb.thisdcos.directory"
           }
         }
       ]
