@@ -1,5 +1,5 @@
 {  
-   "id":"webapp",
+   "id":"/webapp",
    "apps":[  
       {  
          "id":"database",
