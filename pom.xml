@@ -15,6 +15,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mesosphere-repo</id>
+            <name>Mesosphere Repo</name>
+            <url>http://downloads.mesosphere.io/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
