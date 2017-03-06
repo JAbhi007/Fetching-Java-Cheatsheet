@@ -97,5 +97,30 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>dcos</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>dcos</groupId>
+                        <artifactId>dcos-maven-plugin</artifactId>
+                        <version>0.1</version>
+                        <configuration>
+                            <dcosUrl>http://DCOS-ElasticLoadBa-WG3MA5FTD2NX-768823087.us-west-1.elb.amazonaws.com/</dcosUrl>
+                            <ignoreSslCertificate>true</ignoreSslCertificate>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>dcos:deploy</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
